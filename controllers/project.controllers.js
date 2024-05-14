@@ -86,7 +86,7 @@ exports.deleteProjects=async(req,res,next)=>{
  try {
   const project = await Project.findById(id);
   const publicId= project.image.public_id;
-  console.log(project);
+
   if(!project){
     return next(
       new AppError("project not found with the given id",404)
@@ -122,7 +122,7 @@ exports.updateProjects=async(req,res,next)=>{
   //   gitHubUrl:req.body.newGitHubUrl,
   //   hostedUrl:req.body.newHostedUrl
   // }
-  console.log(req.body.name);
+
   try {
     const project = await Project.findById(id);
     if(!project){
